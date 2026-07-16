@@ -111,46 +111,73 @@ nav a:hover{
 /* IGRAČI */
 
 .players{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:35px;
     margin-top:40px;
 }
 
 .player{
-    width:320px;
-    background:#0b376d;
+    position:relative;
+    height:430px;
     border-radius:20px;
     overflow:hidden;
-    color:white;
-    text-align:center;
     box-shadow:0 12px 30px rgba(0,0,0,.25);
-    transition:.3s;
+    transition:0.3s;
 }
 
 .player:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-8px) scale(1.02);
 }
 
 .player img{
     width:100%;
-    height:430px;
+    height:100%;
     object-fit:cover;
-    object-position:center top;
     display:block;
 }
 
-.player h3{
-    margin:20px 15px 10px;
-    font-size:28px;
+.player::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:45%;
+    background:linear-gradient(to top, rgba(0,33,71,.95), rgba(0,33,71,0));
 }
 
-.player p{
-    margin:0 0 25px;
-    font-size:38px;
-    color:#ffd100;
+.player-info{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    z-index:2;
+}
+
+.player-info h3{
+    color:white;
+    margin:0;
+    font-size:28px;
+    line-height:1.2;
+    max-width:70%;
+}
+
+.points{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#ffd100;
+    color:#002b5c;
+    font-size:32px;
     font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
 }
 
 /* LISTE */
