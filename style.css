@@ -16,73 +16,166 @@ body{
 /* HERO */
 
 .hero{
-    min-height:550px;
+    position:relative;
+    height:100vh;
+    min-height:700px;
     background:
-    linear-gradient(rgba(0,35,80,.82),rgba(0,0,0,.75)),
-    url("fotografija1.jpg") center/cover;
+        linear-gradient(rgba(0,20,50,.55),rgba(0,20,50,.75)),
+        url("slike/hero.jpg") center center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    color:white;
-    padding:40px;
+    overflow:hidden;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45),
+        rgba(0,20,50,.85)
+    );
 }
 
 .hero-content{
-    max-width:800px;
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+}
+
+.team-tag{
+    display:inline-block;
+    color:#ffd100;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    font-size:15px;
 }
 
 .hero h1{
-    font-size:52px;
-    margin:0 0 15px;
+    color:white;
+    font-size:72px;
+    margin:0;
+    line-height:1.05;
     text-transform:uppercase;
-    letter-spacing:2px;
 }
 
-.hero p{
-    font-size:24px;
-    margin-bottom:30px;
+.hero-text{
+    color:white;
+    font-size:26px;
+    margin:35px 0 45px;
+    line-height:1.6;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 /* GUMB */
 
 .btn{
     display:inline-block;
+    padding:18px 38px;
+    border-radius:40px;
     background:#e30613;
     color:white;
-    padding:14px 30px;
-    border-radius:30px;
     text-decoration:none;
     font-weight:bold;
     transition:.3s;
+    border:2px solid #e30613;
 }
 
 .btn:hover{
-    background:#b8000b;
-    transform:scale(1.05);
+    transform:translateY(-4px);
+    background:#c4000f;
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#002b5c;
 }
 
 /* NAVIGACIJA */
 
 nav{
-    background:#002b5c;
-    padding:18px;
-    text-align:center;
-    position:sticky;
+    position:fixed;
     top:0;
-    z-index:100;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+    background:rgba(0,25,60,.75);
+    backdrop-filter:blur(10px);
+    z-index:999;
 }
 
-nav a{
+.nav-logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#e30613;
     transition:.3s;
 }
 
-nav a:hover{
-    color:#e30613;
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.language-switch{
+    display:flex;
+    gap:8px;
+}
+
+.lang{
+    border:none;
+    background:white;
+    color:#002b5c;
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.lang.active{
+    background:#e30613;
+    color:white;
 }
 
 /* SADRŽAJ */
