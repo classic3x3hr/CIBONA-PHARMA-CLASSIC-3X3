@@ -325,3 +325,106 @@ nav a{
 }
 
 }
+
+/* ========================= */
+/* O NAMA */
+/* ========================= */
+
+.about{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    margin-bottom:50px;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.section-tag{
+    display:inline-block;
+    color:#e30613;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.about-content h2{
+    font-size:38px;
+    color:#002b5c;
+    margin:10px 0 20px;
+}
+
+.about-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+}
+
+.stats{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.stat{
+    background:#002b5c;
+    color:white;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:38px;
+    margin:0;
+    color:#ffd100;
+}
+
+.stat span{
+    display:block;
+    margin-top:10px;
+    font-size:17px;
+}
+
+/* TABLET */
+
+@media (min-width:768px){
+
+.about{
+    padding:45px;
+}
+
+.stats{
+    grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+/* RAČUNALO */
+
+@media (min-width:1100px){
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.about-content h2{
+    font-size:48px;
+}
+
+.about-content p{
+    font-size:20px;
+}
+
+}
