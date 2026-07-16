@@ -427,4 +427,40 @@ nav a{
     font-size:20px;
 }
 
+/* HERO STATISTIKA */
+
+.hero-stats{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.hero-stat{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:18px;
+    padding:22px;
+}
+
+.hero-stat h3{
+    margin:0;
+    font-size:34px;
+    color:#ffd100;
+}
+
+.hero-stat span{
+    display:block;
+    margin-top:8px;
+    color:white;
+    font-size:16px;
+}
+
+@media(min-width:900px){
+
+.hero-stats{
+    grid-template-columns:repeat(4,1fr);
+}
+
 }
